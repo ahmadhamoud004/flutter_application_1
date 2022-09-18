@@ -7,6 +7,7 @@ import 'package:flutter_application_1/src/users_managments/blocs/auth_bloc/auth_
 import 'package:flutter_application_1/src/users_managments/data/http_user_repository.dart';
 import 'package:flutter_application_1/src/users_managments/data/user_repository.dart';
 import 'package:flutter_application_1/src/users_managments/domain/user.dart';
+import 'package:flutter_application_1/src/users_managments/presentaion/pages/create_account_page.dart';
 import 'package:flutter_application_1/src/users_managments/presentaion/pages/login_page.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -129,7 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ..add(AuthEventCheckCurrentState()),
                   ),
                 ],
-                child: LoginPage(),
+                child: CreateAccountPage(),
               ),
             ),
           ),

@@ -23,7 +23,7 @@ class LoginPage extends StatelessWidget {
         } else if (state is AuthStateFailure) {
           BotToast.showText(text: state.errorMassage);
         } else if (state is AuthStateAuthenticated) {
-          BotToast.showText(text: "success");
+          BotToast.showText(text: "success Authenticaled");
         }
       },
       builder: ((context, state) {
