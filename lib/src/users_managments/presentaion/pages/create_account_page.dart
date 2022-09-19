@@ -15,7 +15,7 @@ class CreateAccountPage extends StatelessWidget {
   Widget getStep(int currentStep) {
     switch (currentStep) {
       case 1:
-        return const CreateAcountStep3();
+        return const CreateAcountStep1();
       case 2:
         return const CreateAcountStep2();
       //case 3:
