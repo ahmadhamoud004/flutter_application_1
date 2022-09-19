@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/src/presentation/widgets/progress_bar.dart';
 import 'package:flutter_application_1/src/users_managments/blocs/user_form_bloc/user_form_event.dart';
 import 'package:flutter_application_1/src/users_managments/presentaion/components/create_account_step1.dart';
+import 'package:flutter_application_1/src/users_managments/presentaion/components/create_account_step2.dart';
+import 'package:flutter_application_1/src/users_managments/presentaion/components/create_account_step3.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
@@ -13,8 +15,17 @@ class CreateAccountPage extends StatelessWidget {
   Widget getStep(int currentStep) {
     switch (currentStep) {
       case 1:
-        return const CreateAcountStep1();
-
+        return const CreateAcountStep3();
+      case 2:
+        return const CreateAcountStep2();
+      //case 3:
+      //  return const CreateAcountStep3();
+      //case 4:
+      //  return const CreateAcountStep4();
+      //case 5:
+      //  return const CreateAcountStep5();
+      //case 6:
+      //  return const CreateAcountStep6();
       default:
         return Container();
     }
@@ -28,6 +39,15 @@ class CreateAccountPage extends StatelessWidget {
         validators: [Validators.minLength(2), Validators.required]),
     'phoneNumber': FormControl<String>(),
     'email': FormControl<String>(validators: [Validators.email]),
+    'virificationcode': FormControl<String>(validators: [
+      Validators.minLength(4),
+      Validators.maxLength(4),
+      Validators.required
+    ]),
+    "password": FormControl<String>(
+        validators: [Validators.minLength(8), Validators.required]),
+    "passwordcofirmation": FormControl<String>(
+        validators: [Validators.minLength(8), Validators.required]),
   });
   @override
   Widget build(BuildContext context) {
